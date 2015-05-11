@@ -79,6 +79,12 @@ def save_scene():
     filename = os.path.join(temp_dir, user_id + '.mrb')
     slicer.util.saveScene(filename)
 
+def select_andsfilter():
+    print "selecting ANDS filter"
+    slicer.util.mainWindow().moduleSelector().selectModule('SimpleFilters')
+
+
+
 # TODO:
 # - periodidcally load all scenes in a folder
 # - automatically create AND volume and do volume render of the output
@@ -92,10 +98,12 @@ def setupMacros():
   global setup_environment
   global save_scene
   global load_data
+  global select_andsfilter
   
   macros = (
-    ("Shift+Ctrl+2", load_all_scenes),
-    ("Shift+Ctrl+3", save_scene),
+    ("Shift+Ctrl+2", save_scene),
+    ("Shift+Ctrl+3", load_all_scenes),
+    ("Shift+Ctrl+4", select_andsfilter)
     )
       
   for keys,f in macros:
