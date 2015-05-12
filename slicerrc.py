@@ -1,60 +1,47 @@
+import os
+import shutil
+import random
+import string
+
 # number of characters for ID
 N = 4
-SCENE_FOLDER = '/home/jonathan/scenes'
+
+# folder to save scenes
+SCENE_FOLDER = '/home/jonathankhoo/Monash063_scratch/mivp-anatomy/saved-scenes/'
+
+# folder to move loaded scenes to
+MODELS_LOADED_DIRECTORY = '/home/jonathankhoo/Monash063_scratch/mivp-anatomy/loaded-scenes'
 
 user_id = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(N))
 print "id: ", user_id
 
 def load_all_scenes():
-    import os
-    import shutil
     import fnmatch
+
+    global SCENE_FOLDER
+    global MODELS_LOADED_DIRECTORY
 
     # change to model view
     slicer.util.mainWindow().moduleSelector().selectModule('Models')
 
-
-    global SCENE_FOLDER
-
-    MODELS_LOADED_DIRECTORY = '/home/jonathan/models/loaded/'
-
-    SCENE_OR_MODEL = 'scene'
-#SCENE_OR_MODEL = 'model'
-
-    if SCENE_OR_MODEL == 'scene':
-        file_extension = '*.mrb'
-    else:
-        file_extension = '*.vtk'
-
     models = []
     for root, dirnames, filenames in os.walk(SCENE_FOLDER):
-        for filename in fnmatch.filter(filenames, file_extension):
+        for filename in fnmatch.filter(filenames, '*.mrb'):
             models.append(os.path.join(root, filename))
 
     print models
 
     for model in models:
-        if SCENE_OR_MODEL == 'scene':
-            if slicer.util.loadScene(model) == True:
-                print 'loaded successfully; time to move'
-                try:
-                    shutil.move(model, MODELS_LOADED_DIRECTORY)
-                except:
-                    os.remove(model)
-                    pass
-
-        else:
-            if slicer.util.loadModel(model) == True:
-                print 'loaded successfully; time to move'
+        if slicer.util.loadScene(model) == True:
+            print 'loaded successfully; time to move'
+            try:
                 shutil.move(model, MODELS_LOADED_DIRECTORY)
+            except:
+                os.remove(model)
+                pass
 
-# generate random key
 # create folder of key
 def setup_environment():
-    import random
-    import string
-    import os
-
     global user_id
     global SCENE_FOLDER
 
@@ -82,7 +69,6 @@ def save_scene():
 def select_andsfilter():
     print "selecting ANDS filter"
     slicer.util.mainWindow().moduleSelector().selectModule('SimpleFilters')
-
 
 
 # TODO:
