@@ -76,6 +76,27 @@ def select_andsfilter():
 # - automatically create AND volume and do volume render of the output
 # 
 
+def setup_gui():
+  global save_scene
+  global load_all_scenes
+
+  dockWidget = qt.QDockWidget(slicer.util.mainWindow())
+  dockWidget.setObjectName('mivp_extension')
+  dockWidget.setWindowTitle('Monash University - extension')
+  frame = qt.QFrame(dockWidget)
+  layout = qt.QVBoxLayout(frame)
+  dockWidget.setWidget(frame)
+
+  save_button = qt.QPushButton('Save Progress')
+  save_button.connect('clicked()', save_scene)
+
+  load_button = qt.QPushButton('Load all Scenes')
+  load_button.connect('clicked()', load_all_scenes)
+
+  layout.addWidget(save_button)
+  layout.addWidget(load_button)
+  slicer.util.mainWindow().addDockWidget(qt.Qt.LeftDockWidgetArea, dockWidget)
+
 def setupMacros():
   """Set up hot keys for various development scenarios"""
   
@@ -85,7 +106,8 @@ def setupMacros():
   global save_scene
   global load_data
   global select_andsfilter
-  
+  global setup_gui
+
   macros = (
     ("Shift+Ctrl+2", save_scene),
     ("Shift+Ctrl+3", load_all_scenes),
@@ -102,6 +124,7 @@ def setupMacros():
   setup_environment()
   load_data()
   slicer.util.mainWindow().moduleSelector().selectModule('Editor')
+  setup_gui()
 
 # Install macros
 if mainWindow(verbose=False): setupMacros()
