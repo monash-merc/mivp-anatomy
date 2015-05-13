@@ -17,16 +17,33 @@ It runs under a shared directory and currently uses a random 4 alpha-numeric cha
 - Config file for data set and locations of folders
 
 
-## Starting Slicer
-
+# Starting Slicer
 ## Student mode
 
+1. Navigate to /home/projects/Monash063/mivp-anatomy/
+2.     $ ./launch_slicer_on_massive.sh or Double-click on launch_slicer_on_massive.sh (make it an icon on the deskop???)
+
 ### How to save data
+
+1. Segment away
+2. Click on "save progress" when ready to submit current work
+
 
 ## Teacher mode
 
 
+1. Navigate to /home/projects/Monash063/mivp-anatomy/
+2.     $ ./launch_slicer_on_massive.sh or Double-click on launch_slicer_on_massive.sh (make it an icon on the deskop???)
+
+
 ## How to refresh progress
+
+1. Click on "load all scenes" to view work from students
+
+
+## Issues
+- Security - deal with different access levels properly
+- 
 
 
 
