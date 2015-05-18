@@ -6,8 +6,6 @@
 SLICER_PROJECT_FOLDER=/home/projects/Monash063/mivp-anatomy/
 SLICERRC_FILENAME=slicerrc.py
 
-# cp -v -u ${SLICER_PROJECT_FOLDER}/${SLICERRC_FILENAME} ~/.slicerrc.py
-
 slicerrc_file=${SLICER_PROJECT_FOLDER}/${SLICERRC_FILENAME}
 
 if [ ! -e "$slicerrc_file" ]; then
