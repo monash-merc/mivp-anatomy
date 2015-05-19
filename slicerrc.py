@@ -48,7 +48,7 @@ def setup_environment():
     print "setup environment id: ", user_id
 
     temp_dir = os.path.join(SCENE_FOLDER, user_id)
-    os.mkdir(temp_dir)
+    os.makedirs(temp_dir)
 
 def load_data():
     # Download MRHead from sample data
