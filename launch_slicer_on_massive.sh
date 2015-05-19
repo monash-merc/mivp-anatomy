@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 
-# Copy current version of sliccerc.py to ~/.sliccer.py
-
 # MASSIVE - project monash063
-SLICER_PROJECT_FOLDER=/home/projects/Monash063/mivp-anatomy/
+PROJECT_FOLDER=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 SLICERRC_FILENAME=slicerrc.py
 
-slicerrc_file=${SLICER_PROJECT_FOLDER}/${SLICERRC_FILENAME}
+slicerrc_file=${PROJECT_FOLDER}/${SLICERRC_FILENAME}
 
 if [ ! -e "$slicerrc_file" ]; then
   echo "Could not find slicerrc.py file at $slicerrc_file. Exiting"
