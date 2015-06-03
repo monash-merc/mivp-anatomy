@@ -7,10 +7,10 @@ import string
 N = 4
 
 # folder to save scenes
-SCENE_FOLDER = '/home/jonathankhoo/Monash063_scratch/mivp-anatomy/saved-scenes/'
+SCENE_FOLDER = '/scratch/Monash027/mivp-anatomy/saved-scenes/'
 
 # folder to move loaded scenes to
-MODELS_LOADED_DIRECTORY = '/home/jonathankhoo/Monash063_scratch/mivp-anatomy/loaded-scenes'
+MODELS_LOADED_DIRECTORY = '/scratch/Monash027/mivp-anatomy/loaded-scenes/'
 
 user_id = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(N))
 print "id: ", user_id
