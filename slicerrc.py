@@ -1,22 +1,23 @@
 import os
-import shutil
 import random
 import string
+import sys
 
 # number of characters for ID
 N = 4
 
 # folder to save scenes
-SCENE_FOLDER = '/scratch/Monash027/mivp-anatomy/saved-scenes/'
+SCENE_FOLDER = os.environ['SCENEDIR']
 
 # folder to move loaded scenes to
-MODELS_LOADED_DIRECTORY = '/scratch/Monash027/mivp-anatomy/loaded-scenes/'
+MODELS_LOADED_DIRECTORY = os.environ['LOADEDIR'] 
 
 user_id = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(N))
 print "id: ", user_id
 
 def load_all_scenes():
     import fnmatch
+    import shutil
 
     global SCENE_FOLDER
     global MODELS_LOADED_DIRECTORY
@@ -28,8 +29,6 @@ def load_all_scenes():
     for root, dirnames, filenames in os.walk(SCENE_FOLDER):
         for filename in fnmatch.filter(filenames, '*.mrb'):
             models.append(os.path.join(root, filename))
-
-    print models
 
     for model in models:
         if slicer.util.loadScene(model) == True:
