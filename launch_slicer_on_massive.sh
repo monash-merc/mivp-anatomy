@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-# MASSIVE - project monash063
+umask 002 # XXX: terrible... but has to be done
+
+# MASSIVE - project monash027
 PROJECT_FOLDER=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 SLICERRC_FILENAME=slicerrc.py
 
