@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+#
+# Launcher script to set a number of config values,
+# load modules to run on MASSIVE CentOS 6, and then
+# run 3D Slicer via VirtualGL.
+#
+
 umask 002 # XXX: terrible... but has to be done
 
 # MASSIVE - project monash027
@@ -8,10 +14,18 @@ SLICERRC_FILENAME=slicerrc.py
 
 slicerrc_file=${PROJECT_FOLDER}/${SLICERRC_FILENAME}
 
-export SCENEDIR=/scratch/Monash027/mivp-anatomy/saved-scenes/
-export LOADEDIR=/scratch/Monash027/mivp-anatomy/loaded-scenes/
+export SCENE_DIR=/scratch/Monash027/mivp-anatomy/saved-scenes/
+export LOADED_DIR=/scratch/Monash027/mivp-anatomy/loaded-scenes/
 
-# check if both directories exist
+if [ ! -d "$SCENE_DIR" ]; then
+  echo "Error: $SCENE_DIR does not exist. Exiting"
+  exit
+fi
+
+if [ ! -d "$LOADED_DIR" ]; then
+  echo "Error: $LOADED_DIR does not exist. Exiting"
+  exit
+fi
 
 # export DATASET=
 

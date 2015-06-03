@@ -7,10 +7,10 @@ import sys
 N = 4
 
 # folder to save scenes
-SCENE_FOLDER = os.environ['SCENEDIR']
+SCENE_FOLDER = os.environ['SCENE_DIR']
 
 # folder to move loaded scenes to
-MODELS_LOADED_DIRECTORY = os.environ['LOADEDIR'] 
+MODELS_LOADED_DIRECTORY = os.environ['LOADED_DIR'] 
 
 user_id = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(N))
 print "id: ", user_id
