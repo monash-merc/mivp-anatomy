@@ -1,8 +1,26 @@
 ## Purpose of the project
 
-Colin McHenry wanted to devise a way for multiple people to do data segmentation at the same time on the single data set. This project is a working prototype of multiple people (students, staff) being able to segment data concurrently. It uses 3D Slicer and is currently utilising MASSIVE as the host platform. 
+### Setup
+1. Clone git repo from Monash github account
+2. Create two folders (must be group writeable - $ chmod 776 ... )
+- one for saved models
+- one for loaded models
+3. Launch Slicer via the launcher script
 
-It runs under a shared directory and currently uses a random 4 alpha-numeric character string as an identifier. This would ideally be changed to a student's ID or authcate in a classroom setting.
+
+
+### Setup
+1. Clone git repo from Monash github account
+2. Create two folders (must be group writeable - $ chmod 776 ... )
+- one for saved models
+- one for loaded models
+3. Launch Slicer via the launcher script
+
+### Project Overview
+
+Colin McHenry wanted a way for multiple people to do data segmentation at the same time on a single data set. This project is a working prototype that allows multiple people (students, staff) to segment data concurrently. It uses 3D Slicer and is a module built on top of it. It is deployed on MASSIVE CentOS 6 using a vis node and using remote rendering using VirtualGL. 
+
+It runs by saving data in a shared, group-writebale directory and uses a random 4 alpha-numeric character string as an identifier between masks and models. Ideally, this would be changed to a student ID or authcate in a classroom setting.
 
 ### Workflow
 1. Student(s) segments data (builds 3D model - an interative process)
@@ -16,11 +34,15 @@ It runs under a shared directory and currently uses a random 4 alpha-numeric cha
 - Users need to be in the same group (in order to save progress and run Slicer)
 - Config file for data set and locations of folders
 
+- All users in the same MASSIVE project (Monash027 at the time of writing). umask 002 is set at the beginning of the bash launcher script in order to set files and folders as group writeable.
+
+
+
 
 # Starting Slicer
 ## Student mode
 
-1. Navigate to /home/projects/Monash063/mivp-anatomy/
+1. Navigate to /home/projects/Monash027/mivp-anatomy/
 2.     $ ./launch_slicer_on_massive.sh or Double-click on launch_slicer_on_massive.sh (make it an icon on the deskop???)
 
 ### How to save data
@@ -32,7 +54,7 @@ It runs under a shared directory and currently uses a random 4 alpha-numeric cha
 ## Teacher mode
 
 
-1. Navigate to /home/projects/Monash063/mivp-anatomy/
+1. Navigate to /home/projects/Monash027/mivp-anatomy/
 2.     $ ./launch_slicer_on_massive.sh or Double-click on launch_slicer_on_massive.sh (make it an icon on the deskop???)
 
 
@@ -43,9 +65,6 @@ It runs under a shared directory and currently uses a random 4 alpha-numeric cha
 
 ## Issues
 - Security - deal with different access levels properly
-- 
-
-
 
 ### How to use Slicer to segment a data set
 
