@@ -2,14 +2,21 @@
 
 ### Setup
 1. Clone git repo from Monash github account
+
         $ git clone https://github.com/monash-merc/mivp-anatomy.git /home/projects/Monash027/monash-anatomy
+		
 2. Create two folders (must be group writeable - $ chmod 776 ... )
+
      	$ mkdir -p /scratch/Monash027/mivp-anatomy/loaded-scenes
     	$ mkdir -p /scratch/Monash027/mivp-anatomy/saved-scenes
+		
 3. Make folders group writeable
+
 	    $ chmod 776 /scratch/Monash027/mivp-anatomy/loaded-scenes
 	    $ chmod 776 /scratch/Monash027/mivp-anatomy/saved-scenes
+		
 3. Launch Slicer via the launcher script
+
     	$ /home/projects/Monash027/monash-anatomy/launch_slicer_on_massive.sh
 
 ### Project Overview
