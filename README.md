@@ -1,5 +1,3 @@
-## Purpose of the project
-
 ### Setup
 1. Clone git repo from Monash github account
 
@@ -42,9 +40,8 @@ It runs by saving data in a shared, group-writebale directory and uses a random 
 # Starting Slicer
 ## Student mode
 
-1. Navigate to /home/projects/Monash027/mivp-anatomy/
-2. 
-		$ ./launch_slicer_on_massive.sh or Double-click on launch_slicer_on_massive.sh (make it an icon on the deskop???)
+1.              
+		$ /home/projects/Monash027/mivp-anatomy/launch_slicer_on_massive.sh  Double-click on launch_slicer_on_massive.sh (XXX: make it an icon on the deskop?)
 
 ### How to save data
 
@@ -55,9 +52,8 @@ It runs by saving data in a shared, group-writebale directory and uses a random 
 ## Teacher mode
 
 
-1. Navigate to /home/projects/Monash027/mivp-anatomy/
-2.     
-		$ ./launch_slicer_on_massive.sh or Double-click on launch_slicer_on_massive.sh (make it an icon on the deskop???)
+1.
+		$ /home/projects/Monash027/mivp-anatomy/launch_slicer_on_massive.sh  Double-click on launch_slicer_on_massive.sh (XXX: make it an icon on the deskop?)
 
 
 ## How to refresh progress
@@ -69,7 +65,7 @@ It runs by saving data in a shared, group-writebale directory and uses a random 
 - Security - deal with different access levels properly
 
 ### How to use Slicer to segment a data set
-
+...
 
 
 
