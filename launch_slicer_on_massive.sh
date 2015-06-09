@@ -6,9 +6,16 @@
 # run 3D Slicer via VirtualGL.
 #
 
+# Location to data set here:
+# export DATASET=/scratch/Monash027/mivp-anatomy/foo/bar.nrrd
+#
+
+###
+# Do not change any of the following.
+###
+
 umask 002 # XXX: terrible... but has to be done
 
-# MASSIVE - project monash027
 PROJECT_FOLDER=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 SLICERRC_FILENAME=slicerrc.py
 
@@ -26,8 +33,6 @@ if [ ! -d "$LOADED_DIR" ]; then
   echo "Error: $LOADED_DIR does not exist. Exiting"
   exit
 fi
-
-# export DATASET=
 
 # set folder values here. and send them via environment variables
 

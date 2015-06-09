@@ -50,11 +50,17 @@ def setup_environment():
     os.makedirs(temp_dir)
 
 def load_data():
-    # Download MRHead from sample data
-    import SampleData
-    sampleDataLogic = SampleData.SampleDataLogic()
-    print("Getting MR Head Volume")
-    mrHeadVolume = sampleDataLogic.downloadMRHead()
+    dataset = os.environ.get('DATASET') 
+
+    if dataset:
+	print "loading: ", dataset
+	slicer.util.loadScene(dataset)
+    else:
+        # Download MRHead from sample data
+        import SampleData
+        sampleDataLogic = SampleData.SampleDataLogic()
+        print("Getting MR Head Volume")
+        mrHeadVolume = sampleDataLogic.downloadMRHead()
 
 def save_scene():
     global user_id
@@ -127,5 +133,3 @@ def setupMacros():
 
 # Install macros
 if mainWindow(verbose=False): setupMacros()
-
-
