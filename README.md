@@ -2,7 +2,9 @@
 
 ### Setup
 1. Clone git repo from Monash github account
+
     $ git clone https://github.com/monash-merc/mivp-anatomy.git /home/projects/Monash027/monash-anatomy
+	
 2. Create two folders (must be group writeable - $ chmod 776 ... )
 	$ mkdir -p /scratch/Monash027/mivp-anatomy/loaded-scenes
 	$ mkdir -p /scratch/Monash027/mivp-anatomy/saved-scenes
