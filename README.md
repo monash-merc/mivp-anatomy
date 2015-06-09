@@ -2,17 +2,15 @@
 
 ### Setup
 1. Clone git repo from Monash github account
-
-    $ git clone https://github.com/monash-merc/mivp-anatomy.git /home/projects/Monash027/monash-anatomy
-	
+        $ git clone https://github.com/monash-merc/mivp-anatomy.git /home/projects/Monash027/monash-anatomy
 2. Create two folders (must be group writeable - $ chmod 776 ... )
-	$ mkdir -p /scratch/Monash027/mivp-anatomy/loaded-scenes
-	$ mkdir -p /scratch/Monash027/mivp-anatomy/saved-scenes
+     	$ mkdir -p /scratch/Monash027/mivp-anatomy/loaded-scenes
+    	$ mkdir -p /scratch/Monash027/mivp-anatomy/saved-scenes
 3. Make folders group writeable
-	$ chmod 776 /scratch/Monash027/mivp-anatomy/loaded-scenes
-	$ chmod 776 /scratch/Monash027/mivp-anatomy/saved-scenes
+	    $ chmod 776 /scratch/Monash027/mivp-anatomy/loaded-scenes
+	    $ chmod 776 /scratch/Monash027/mivp-anatomy/saved-scenes
 3. Launch Slicer via the launcher script
-	$ /home/projects/Monash027/monash-anatomy/launch_slicer_on_massive.sh
+    	$ /home/projects/Monash027/monash-anatomy/launch_slicer_on_massive.sh
 
 ### Project Overview
 
@@ -34,14 +32,12 @@ It runs by saving data in a shared, group-writebale directory and uses a random 
 
 - All users in the same MASSIVE project (Monash027 at the time of writing). umask 002 is set at the beginning of the bash launcher script in order to set files and folders as group writeable.
 
-
-
-
 # Starting Slicer
 ## Student mode
 
 1. Navigate to /home/projects/Monash027/mivp-anatomy/
-2.     $ ./launch_slicer_on_massive.sh or Double-click on launch_slicer_on_massive.sh (make it an icon on the deskop???)
+2. 
+		$ ./launch_slicer_on_massive.sh or Double-click on launch_slicer_on_massive.sh (make it an icon on the deskop???)
 
 ### How to save data
 
@@ -53,7 +49,8 @@ It runs by saving data in a shared, group-writebale directory and uses a random 
 
 
 1. Navigate to /home/projects/Monash027/mivp-anatomy/
-2.     $ ./launch_slicer_on_massive.sh or Double-click on launch_slicer_on_massive.sh (make it an icon on the deskop???)
+2.     
+		$ ./launch_slicer_on_massive.sh or Double-click on launch_slicer_on_massive.sh (make it an icon on the deskop???)
 
 
 ## How to refresh progress
